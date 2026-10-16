@@ -1,0 +1,26 @@
+Manual test checklist
+
+Build and run:
+  cmake -S . -B build
+  cmake --build build
+  ./build/minishell
+
+Try:
+  pwd
+  ls
+  ls | grep cpp | wc -l
+  echo hello > output.txt
+  cat < output.txt
+  echo again >> output.txt
+  cat output.txt
+  sleep 2 &
+  history
+  cd ..
+  pwd
+  exit
+
+Expected:
+- Pipe command prints a count.
+- output.txt contains "hello" and then "again" on separate lines.
+- Background sleep returns to the prompt immediately.
+- history lists commands from the current session.
